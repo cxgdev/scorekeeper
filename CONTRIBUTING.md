@@ -87,13 +87,4 @@ fix: correct index offset in Sport.updateFields
 
 ---
 
-## 📦 Releasing
-
-If you have permission to release:
-- Merge PRs into `main`
-- Create a **GitHub Release** with a new version tag (`vX.Y.Z`)
-- CI will publish to npm automatically (if configured)
-
----
-
 Happy coding! 🎯
