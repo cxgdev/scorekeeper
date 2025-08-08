@@ -1,5 +1,5 @@
 import { describe, test } from 'vitest';
-import Controller, { Volleyball } from '../src/daktronics';
+import Controller, { Volleyball } from '../../src/daktronics';
 
 /* more tests will be added Soon(TM) */
 

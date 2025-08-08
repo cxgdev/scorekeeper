@@ -22,6 +22,9 @@
         "dev": "tsup --watch",
         "test": "vitest run",
         "test:watch": "vitest",
+        "test:unit": "vitest run --dir test/unit",
+        "test:int": "vitest run --dir test/integration",
+        "test:ci": "npm run test:unit",
         "lint": "eslint . --ext .ts",
         "typecheck": "tsc -p tsconfig.json --noEmit",
         "prepare": "npm run build"
