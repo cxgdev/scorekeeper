@@ -4,6 +4,13 @@ A TypeScript module for interfacing with Daktronics scoreboard controllers (and 
 
 > ✏️ **NOTE** - Scorekeeper is in active development. Any contributions are appreciated!
 
+## Features
+
+- Volleyball integration for Daktronics All Sport 5000
+- Type-safe, event-driven API
+- Easily extendable to other sports
+- Works with Node.js + TypeScript out of the box
+
 ## Supported Sports
 
 - All Sport 5000
@@ -20,6 +27,12 @@ While Scorekeeper only supports volleyball at the moment, more sports are planne
 ### Using pnpm
 
 `pnpm add @cxgdev/scorekeeper`
+
+## Connecting a Console
+
+Consoles are connected with a Serial to USB cable.
+
+**Daktronics All Sport 5000** - Connect to the port labeled I/O Port (J6) with a DB25 to DB9 serial connector.
 
 ## Usage
 
