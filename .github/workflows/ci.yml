@@ -1,10 +1,8 @@
 name: CI
-
 on:
     push:
-        branches: [main]
+        branches: ['**'] # Run CI on every test.
     pull_request:
-
 jobs:
     build-test-lint:
         runs-on: ubuntu-latest
