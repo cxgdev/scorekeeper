@@ -30,5 +30,3 @@ Thumbs.db
 *.log
 
 *.tgz
-
-package-lock.json
