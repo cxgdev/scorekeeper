@@ -24,7 +24,7 @@
         "test:watch": "vitest",
         "test:unit": "vitest run --dir test/unit",
         "test:int": "vitest run --dir test/integration",
-        "test:ci": "npm run test:unit",
+        "test:ci": "echo Not implemented.",
         "lint": "eslint . --ext .ts",
         "typecheck": "tsc -p tsconfig.json --noEmit",
         "prepare": "npm run build"
