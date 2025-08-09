@@ -22,11 +22,11 @@ While Scorekeeper only supports volleyball at the moment, more sports are planne
 
 ### Using NPM
 
-`npm install @cxgdev/scorekeeper`
+`npm install @cxgdev/scorekeeper@alpha`
 
 ### Using pnpm
 
-`pnpm add @cxgdev/scorekeeper`
+`pnpm add @cxgdev/scorekeeper@alpha`
 
 ## Connecting a Console
 
