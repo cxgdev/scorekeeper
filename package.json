@@ -1,5 +1,5 @@
 {
-    "name": "scorekeeper",
+    "name": "@cxgdev/scorekeeper",
     "version": "0.1.0-alpha.1",
     "description": "A TypeScript module for interfacing with Daktronics scoreboard controllers.",
     "license": "GPL-3.0-only",
