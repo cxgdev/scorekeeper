@@ -6,6 +6,10 @@
         "type": "git",
         "url": "https://github.com/cxgdev/scorekeeper"
     },
+    "homepage": "https://github.com/cxgdev/scorekeeper#readme",
+    "bugs": {
+        "url": "https://github.com/cxgdev/scorekeeper/issues"
+    },
     "publishConfig": {
         "access": "public",
         "provenance": true,
