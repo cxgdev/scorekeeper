@@ -1,18 +1,18 @@
-# **Scorekeeper**
+<h1 align="center">
+Scorekeeper
+</h1>
 
-<center>
-    <div>
-        <img src="https://img.shields.io/github/v/release/cxgdev/scorekeeper?include_prereleases&logo=github">
-        <img src="https://img.shields.io/npm/v/%40cxgdev%2Fscorekeeper?logo=npm">
-        <img src="https://img.shields.io/github/actions/workflow/status/cxgdev/scorekeeper/ci.yml?logo=github">
-        <img src="https://img.shields.io/github/last-commit/cxgdev/scorekeeper?logo=github">
-        <img src="https://img.shields.io/github/contributors/cxgdev/scorekeeper?logo=github">
-    </div>
-</center>
+<p align="center">A TypeScript module for interfacing with Daktronics scoreboard controllers (and possibly more in the future).</p>
+
+<p align="center">
+    <img src="https://img.shields.io/github/v/release/cxgdev/scorekeeper?include_prereleases&logo=github" align="center">
+    <img src="https://img.shields.io/npm/v/%40cxgdev%2Fscorekeeper?logo=npm" align="center">
+    <img src="https://img.shields.io/github/actions/workflow/status/cxgdev/scorekeeper/ci.yml?logo=github" align="center">
+    <img src="https://img.shields.io/github/last-commit/cxgdev/scorekeeper?logo=github" align="center">
+    <img src="https://img.shields.io/github/contributors/cxgdev/scorekeeper?logo=github" align="center">
+</p>
 
 ---
-\
-A TypeScript module for interfacing with Daktronics scoreboard controllers (and possibly more in the future).
 
 > ✏️ **NOTE** - Scorekeeper is in active development. Any contributions are appreciated!
 
