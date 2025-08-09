@@ -2,6 +2,15 @@
     "name": "@cxgdev/scorekeeper",
     "version": "0.1.0-alpha.1",
     "description": "A TypeScript module for interfacing with Daktronics scoreboard controllers.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cxgdev/scorekeeper"
+    },
+    "publishConfig": {
+        "access": "public",
+        "provenance": true,
+        "tag": "alpha"
+    },
     "license": "GPL-3.0-only",
     "type": "module",
     "main": "./dist/index.cjs",
