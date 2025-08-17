@@ -1,4 +1,3 @@
-// eslint.config.js
 import js from '@eslint/js';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
@@ -26,7 +25,6 @@ export default tseslint.config(
             globals: { ...globals.node }
         },
         rules: {
-            // your typed-rule tweaks here
             '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }]
         }
     },
