@@ -4,12 +4,10 @@ import Packet from '../types/Packet';
 import Field from '../Field';
 import BooleanField from '../BooleanField';
 
-abstract class Sport extends EventEmitter {
+abstract class Sport {
     private controller: Controller;
 
     constructor(controller: Controller) {
-        super();
-
         this.controller = controller;
 
         // Wait for a packet then parse it
