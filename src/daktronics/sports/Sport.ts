@@ -1,4 +1,3 @@
-import EventEmitter from 'events';
 import Controller from '../Controller';
 import Packet from '../types/Packet';
 import Field from '../Field';
