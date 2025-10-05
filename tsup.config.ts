@@ -1,9 +1,12 @@
 import { defineConfig } from 'tsup';
 
 export default defineConfig({
-    entry: ['src/index.ts'],
+    entry: {
+        index: 'src/index.ts',
+        'daktronics/index': 'src/daktronics/index.ts'
+    },
     format: ['esm', 'cjs'],
-    dts: true,
+    dts: true, // .d.ts for each entry
     sourcemap: true,
     clean: true,
     target: 'es2020',

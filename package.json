@@ -25,6 +25,18 @@
             "types": "./dist/index.d.ts",
             "import": "./dist/index.js",
             "require": "./dist/index.cjs"
+        },
+        "./daktronics": {
+            "types": "./dist/daktronics/index.d.ts",
+            "import": "./dist/daktronics/index.js",
+            "require": "./dist/daktronics/index.cjs"
+        }
+    },
+    "typesVersions": {
+        "*": {
+            "daktronics": [
+                "dist/daktronics/index.d.ts"
+            ]
         }
     },
     "files": [
