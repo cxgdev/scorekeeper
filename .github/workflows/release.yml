@@ -2,13 +2,13 @@ name: Release
 
 on:
     release:
-        types: [published] # Run when a GitHub Release is published
-    workflow_dispatch: # Allow manual runs too
+        types: [published] # when a GitHub Release is published
+    workflow_dispatch: # manual runs
 
 permissions:
     contents: read
     id-token: write # required for npm --provenance
-    packages: write # required to publish to GitHub Packages
+    packages: write # required for GitHub Packages
 
 concurrency:
     group: ${{ github.workflow }}-${{ github.ref }}
@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
     publish-npm:
-        name: Publish to npm (with provenance)
+        name: Publish to npm (alpha)
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
@@ -25,16 +25,18 @@ jobs:
               with:
                   node-version: 20
                   registry-url: https://registry.npmjs.org
+                  cache: 'npm'
 
             - run: npm ci
             - run: npm run build
 
-            - run: npm publish --provenance --access public --tag
+            - name: Publish to npm (with provenance)
+              run: npm publish --provenance --access public --tag alpha
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     publish-github-packages:
-        name: Publish to GitHub Packages
+        name: Publish to GitHub Packages (alpha)
         runs-on: ubuntu-latest
         needs: publish-npm
         steps:
@@ -45,11 +47,12 @@ jobs:
                   node-version: 20
                   registry-url: https://npm.pkg.github.com
                   always-auth: true
+                  cache: 'npm'
 
             - run: npm ci
             - run: npm run build
 
-            # No provenance here; GH Packages doesn't use it
-            - run: npm publish --access public --tag alpha
+            - name: Publish to GitHub Packages
+              run: npm publish --access public --tag alpha
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
