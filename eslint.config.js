@@ -21,7 +21,7 @@ export default tseslint.config(
             parserOptions: {
                 project: ['./tsconfig.eslint.json'],
                 // Important for flat config so project path resolves correctly
-                tsconfigRootDir: new URL('.', import.meta.url)
+                tsconfigRootDir: `.${import.meta.url}`
             },
             globals: { ...globals.node }
         },
