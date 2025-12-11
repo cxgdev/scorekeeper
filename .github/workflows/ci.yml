@@ -17,7 +17,7 @@ jobs:
               with:
                   node-version: ${{ matrix.node }}
                   cache: npm
-            - run: npm ci
+            # - run: npm ci
             - run: npm run typecheck
             - run: npm run lint
             - run: npm run test:ci     # only unit tests in CI
