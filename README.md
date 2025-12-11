@@ -27,6 +27,7 @@ Scorekeeper
 
 - All Sport 5000
     - 🏐 Volleyball
+    - 🏀 Basketball
 
 While Scorekeeper only supports volleyball at the moment, more sports are planned and will be added in the very near future.
 
@@ -77,3 +78,5 @@ controller.on('packet', (packet) => {
 ```
 
 Alternatively, you can use some of the lower-level events the `Controller` class has to offer, such as `connect`, `chunk`, or `raw`. Documentation for these events are available in your IDE.
+
+**WIKI COMING SOON!**
