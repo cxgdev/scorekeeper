@@ -84,28 +84,28 @@ export class Basketball extends Sport {
             /** Home Player-Foul-Points ('nn-nn-nn') */
             playerFoulPoints: new Field(240, 8, 'L', '')
         },
-        scoreByPeriod: {
-            /** Home Score - Current Period */
-            current: new Field(282, 2, 'R', 0, Number),
-            /** Home Score - Period 1 */
-            period1: new Field(264, 2, 'R', 0, Number),
-            /** Home Score - Period 2 */
-            period2: new Field(266, 2, 'R', 0, Number),
-            /** Home Score - Period 3 */
-            period3: new Field(268, 2, 'R', 0, Number),
-            /** Home Score - Period 4 */
-            period4: new Field(270, 2, 'R', 0, Number),
-            /** Home Score - Period 5 */
-            period5: new Field(272, 2, 'R', 0, Number),
-            /** Home Score - Period 6 */
-            period6: new Field(274, 2, 'R', 0, Number),
-            /** Home Score - Period 7 */
-            period7: new Field(276, 2, 'R', 0, Number),
-            /** Home Score - Period 8 */
-            period8: new Field(278, 2, 'R', 0, Number),
-            /** Home Score - Period 9 */
-            period9: new Field(280, 2, 'R', 0, Number),
-        },
+        // scoreByPeriod: {
+        //     /** Home Score - Current Period */
+        //     current: new Field(282, 2, 'R', 0, Number),
+        //     /** Home Score - Period 1 */
+        //     period1: new Field(264, 2, 'R', 0, Number),
+        //     /** Home Score - Period 2 */
+        //     period2: new Field(266, 2, 'R', 0, Number),
+        //     /** Home Score - Period 3 */
+        //     period3: new Field(268, 2, 'R', 0, Number),
+        //     /** Home Score - Period 4 */
+        //     period4: new Field(270, 2, 'R', 0, Number),
+        //     /** Home Score - Period 5 */
+        //     period5: new Field(272, 2, 'R', 0, Number),
+        //     /** Home Score - Period 6 */
+        //     period6: new Field(274, 2, 'R', 0, Number),
+        //     /** Home Score - Period 7 */
+        //     period7: new Field(276, 2, 'R', 0, Number),
+        //     /** Home Score - Period 8 */
+        //     period8: new Field(278, 2, 'R', 0, Number),
+        //     /** Home Score - Period 9 */
+        //     period9: new Field(280, 2, 'R', 0, Number),
+        // },
         /** The players configured as being currently in-game via `MASS SUB.` and `INDIV. SUB.` */
         inGame: Array.from({ length: 5 }, (_, i) => {
             const startItem = 304 + i * 7;
