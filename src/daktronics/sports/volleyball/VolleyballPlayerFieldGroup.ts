@@ -1,9 +1,12 @@
-import BooleanField from '../BooleanField';
-import Field from '../Field';
-import Packet from '../types/Packet';
+import BooleanField from '../../BooleanField';
+import Field from '../../Field';
+import Packet from '../../types/Packet';
 
+/** Represents a group of players and their data. */
 export class VolleyballPlayerFieldGroup {
+    /** Whether this player is currently marked as in-game */
     public readonly status: BooleanField;
+    /** Player's number represented as a two character long string. */
     public readonly number: Field<string>;
     /** A value that can be defined in the All Sport console settings under `MENU` > `EDIT SETTINGS?` > `USER DEF 1` or `USER DEF 2` */
     public readonly userDefined1: Field<string>;

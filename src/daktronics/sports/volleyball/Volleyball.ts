@@ -1,6 +1,6 @@
-import BooleanField from '../BooleanField';
-import Field from '../Field';
-import Sport from './Sport';
+import BooleanField from '../../BooleanField';
+import Field from '../../Field';
+import Sport from '../Sport';
 import VolleyballPlayerFieldGroup from './VolleyballPlayerFieldGroup';
 
 export class Volleyball extends Sport {
@@ -116,3 +116,5 @@ export class Volleyball extends Sport {
         guestSets: new Field(260, 2, 'R', 0, Number)
     };
 }
+
+export default Volleyball;

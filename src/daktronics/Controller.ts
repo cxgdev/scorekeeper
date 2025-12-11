@@ -52,8 +52,7 @@ export class Controller extends EventEmitter {
     }
 
     /**
-     * Connects to a Daktronics All Sport 5000 on the port `port`.
-     * @param port The port that the controller is connected on
+     * Connects to a Daktronics All Sport 5000
      */
     public connect() {
         // Check for existing connections

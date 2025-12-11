@@ -19,7 +19,7 @@ interface FieldEvents<DataType> {
 
 export class Field<DataType> extends EventEmitter {
     /** The current parsed value of this field */
-    private _value: DataType;
+    private _value: DataType | undefined = undefined;
 
     /** The last raw slice (unparsed, untrimmed) of this field */
     private _raw: string = '';
@@ -43,7 +43,7 @@ export class Field<DataType> extends EventEmitter {
         item: number,
         length: number,
         justify: 'L' | 'R',
-        initial: DataType,
+        initial: DataType, // NOTE: preserved for compatibility, but no longer used internally
         parser: (raw: string) => DataType = (v) => v as unknown as DataType,
         equals: (a: DataType, b: DataType) => boolean = (a, b) => a === b
     ) {
@@ -51,14 +51,19 @@ export class Field<DataType> extends EventEmitter {
         this._item = item;
         this._length = length;
         this._justify = justify;
-        this._value = initial;
+        // initial is NOT assigned anymore - value stays undefined until first valid packet
         this._parser = parser;
         this._equals = equals;
     }
 
     /** Current parsed value */
-    get value(): DataType {
+    get value(): DataType | undefined {
         return this._value;
+    }
+
+    /** Whether a valid RTD value has ever been parsed */
+    get initialized(): boolean {
+        return this._value !== undefined;
     }
 
     /** Last raw slice (unparsed, untrimmed) */
@@ -107,8 +112,8 @@ export class Field<DataType> extends EventEmitter {
         this.emit('update', newValue, raw);
 
         // Emit change only when different
-        if (!this._equals(this._value, newValue)) {
-            const prev = this._value;
+        if (this._value === undefined || !this._equals(this._value, newValue)) {
+            const prev = this._value as DataType;
             this._value = newValue;
             this.emit('change', this._value, prev, raw);
             return true;

@@ -1,3 +1,3 @@
 export * from './Sport';
-export * from './Volleyball';
-export * from './VolleyballPlayerFieldGroup';
+export * from './volleyball';
+export * from './basketball';
