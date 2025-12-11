@@ -1,6 +1,6 @@
 {
     "name": "@cxgdev/scorekeeper",
-    "version": "0.1.0-alpha.2",
+    "version": "0.1.0-alpha.3",
     "description": "A TypeScript module for interfacing with Daktronics scoreboard controllers.",
     "repository": {
         "type": "git",
