@@ -3,7 +3,7 @@
 Thanks for your interest in contributing! Having other people willing to contribute really gives me some motivation with this project.
 
 This project uses **TypeScript**, **Vitest**, **ESLint**, and **GitHub Actions** for CI.  
-We keep the `main` (or `stable`) branch always in a working, release-ready state.
+I keep the `main` (or `stable`) branch always in a working, release-ready state.
 
 Obviously, this project isn't available for everyone to contribute to--you do need access to a Daktronics All Sport 5000 controller and the required cables.
 
