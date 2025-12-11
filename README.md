@@ -29,7 +29,7 @@ Scorekeeper
     - 🏐 Volleyball
     - 🏀 Basketball
 
-While Scorekeeper only supports volleyball at the moment, more sports are planned and will be added in the very near future.
+More sports are planned and will be added in the very near future.
 
 ## Installation
 
