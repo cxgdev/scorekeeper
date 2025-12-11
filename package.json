@@ -49,7 +49,6 @@
         "test:watch": "vitest",
         "test:unit": "vitest run --dir test/unit",
         "test:int": "vitest run --dir test/integration",
-        "test:ci": "echo Not implemented.",
         "monitor": "npx tsx --watch ./test/live/monitor.ts",
         "lint": "eslint . --ext .ts",
         "typecheck": "tsc -p tsconfig.json --noEmit",
