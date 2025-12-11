@@ -3,7 +3,7 @@ import Packet from '../types/Packet';
 import Field from '../Field';
 import BooleanField from '../BooleanField';
 
-abstract class Sport {
+export default abstract class Sport {
     private controller: Controller;
 
     constructor(controller: Controller) {
@@ -17,7 +17,6 @@ abstract class Sport {
 
     /**
      * Takes a packet from the controller and reads the data we can get from the sport.
-     *
      * @param packet The full packet read from the controller
      */
     private parsePacket(packet: Packet): void {
@@ -87,5 +86,3 @@ abstract class Sport {
         else return raw.trimEnd(); // left-justified
     }
 }
-
-export default Sport;

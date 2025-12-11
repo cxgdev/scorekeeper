@@ -3,7 +3,7 @@ import Packet from './types/Packet';
 
 interface BooleanFieldEvents {
     update: (value: boolean, raw: string) => void;
-    change: (value: boolean, prev: boolean, raw: string) => void;
+    change: (value: boolean, prev: boolean | undefined, raw: string) => void;
 }
 
 /**
@@ -11,8 +11,8 @@ interface BooleanFieldEvents {
  * (e.g., 'h' = true, ' ' = false). Useful for things like horn indicators or clock states.
  */
 export class BooleanField extends EventEmitter {
-    /** Current parsed value */
-    private _value: boolean;
+    /** Current parsed boolean value */
+    private _value: boolean | undefined = undefined;
 
     /** Last raw single-character slice */
     private _raw = '';
@@ -26,17 +26,21 @@ export class BooleanField extends EventEmitter {
     /** Character representing false (often space) */
     private readonly falseChar: string;
 
-    constructor(item: number, trueChar: string, falseChar = ' ', initial = false) {
+    constructor(item: number, trueChar: string, falseChar = ' ') {
         super();
         this._item = item;
         this.trueChar = trueChar;
         this.falseChar = falseChar;
-        this._value = initial;
     }
 
     /** Current parsed boolean value */
-    get value(): boolean {
+    get value(): boolean | undefined {
         return this._value;
+    }
+
+    /** Whether a valid RTD value has ever been received */
+    get initialized(): boolean {
+        return this._value !== undefined;
     }
 
     /** Last raw character slice (unparsed) */
@@ -71,13 +75,15 @@ export class BooleanField extends EventEmitter {
         this._raw = rawChar;
 
         let newValue: boolean | undefined;
+
         if (rawChar === this.trueChar) newValue = true;
         else if (rawChar === this.falseChar) newValue = false;
         else return false; // Unknown/invalid char -> ignore silently
 
         this.emit('update', newValue, rawChar);
 
-        if (this._value !== newValue) {
+        // Detect first assignment OR actual change
+        if (this._value === undefined || this._value !== newValue) {
             const prev = this._value;
             this._value = newValue;
             this.emit('change', this._value, prev, rawChar);
@@ -86,8 +92,6 @@ export class BooleanField extends EventEmitter {
 
         return false;
     }
-
-    // ----- Strongly-typed EventEmitter surface (no `any`) -----
 
     /** Listen for events with proper typings */
     override on<E extends keyof BooleanFieldEvents>(event: E, listener: BooleanFieldEvents[E]): this;

@@ -3,7 +3,8 @@ import js from '@eslint/js';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import eslintConfigPrettier from 'eslint-config-prettier';
-import { URL } from 'url';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
 export default tseslint.config(
     // Ignore build output everywhere
@@ -21,7 +22,7 @@ export default tseslint.config(
             parserOptions: {
                 project: ['./tsconfig.eslint.json'],
                 // Important for flat config so project path resolves correctly
-                tsconfigRootDir: new URL('.', import.meta.url)
+                tsconfigRootDir: dirname(fileURLToPath(import.meta.url))
             },
             globals: { ...globals.node }
         },

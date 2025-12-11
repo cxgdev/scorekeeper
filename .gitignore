@@ -8,15 +8,6 @@ pnpm-debug.log*
 # Build output
 dist/
 build/
-*.tsbuildinfo
-
-# Test coverage
-coverage/
-
-# Env files
-.env
-.env.*
-!.env.example
 
 # OS / Editor files
 .DS_Store
@@ -25,8 +16,3 @@ Thumbs.db
 # IDEs
 .vscode/
 .idea/
-
-# Logs
-*.log
-
-*.tgz
